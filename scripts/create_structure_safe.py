@@ -65,7 +65,7 @@ def generate_day_folders(repo_root: Path, dry_run: bool = True) -> List[Tuple[Pa
     # Verificar que existe el template
     if not template_path.exists():
         print(f"⚠️  Advertencia: No se encontró {template_path}")
-        template_content = "# Día {day:02d}\n\nDocumentación pendiente.\n"
+        template_content = "# Día XX\n\nDocumentación pendiente.\n"
     else:
         with open(template_path, "r", encoding="utf-8") as f:
             template_content = f.read()
@@ -88,10 +88,10 @@ def generate_day_folders(repo_root: Path, dry_run: bool = True) -> List[Tuple[Pa
             if not dry_run:
                 main_py.write_text(
                     f'"""Día {day:02d} - 100 Days of Python"""\n\n'
-                    'def main():\n'
-                    '    print("Día {day:02d}")\n\n\n'
-                    'if __name__ == "__main__":\n'
-                    '    main()\n',
+                    f'def main():\n'
+                    f'    print("Día {day:02d}")\n\n\n'
+                    f'if __name__ == "__main__":\n'
+                    f'    main()\n',
                     encoding="utf-8"
                 )
             actions.append((main_py, "Crear main.py"))
