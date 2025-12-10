@@ -86,14 +86,16 @@ def generate_day_folders(repo_root: Path, dry_run: bool = True) -> List[Tuple[Pa
         main_py = day_folder / "main.py"
         if not main_py.exists():
             if not dry_run:
-                main_py.write_text(
-                    f'"""Día {day:02d} - 100 Days of Python"""\n\n'
-                    f'def main():\n'
-                    f'    print("Día {day:02d}")\n\n\n'
-                    f'if __name__ == "__main__":\n'
-                    f'    main()\n',
-                    encoding="utf-8"
-                )
+                main_content = f'''"""Día {day:02d} - 100 Days of Python"""
+
+def main():
+    print("Día {day:02d}")
+
+
+if __name__ == "__main__":
+    main()
+'''
+                main_py.write_text(main_content, encoding="utf-8")
             actions.append((main_py, "Crear main.py"))
         else:
             actions.append((main_py, "Ya existe"))
