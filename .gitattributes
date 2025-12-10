@@ -1,0 +1,12 @@
+# Normaliza fin de línea para contenido de texto
+* text=auto eol=lf
+
+# Opcional: marca algunos tipos como binarios para evitar diffs corruptos
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
