@@ -11,7 +11,7 @@ Este repositorio contiene mi progreso del curso "100 Days of Code: The Complete 
 - Professional (Días 81–100)
 
 Cada día tiene su carpeta con:
-- `main.py` o scripts relevantes
+- `[nombre proyecto].py` o scripts relevantes
 - `README.md` breve (qué se implementó, objetivos, problemas y soluciones)
 - recursos extra si aplica (datos, imágenes, etc.)
 
